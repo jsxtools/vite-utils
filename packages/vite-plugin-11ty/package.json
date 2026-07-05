@@ -1,0 +1,43 @@
+{
+	"name": "@jsxtools/vite-plugin-11ty",
+	"version": "0.1.0",
+	"description": "Vite plugin that integrates the Eleventy static site generator",
+	"author": "Jonathan Neal <jonathantneal@hotmail.com> (https://jonneal.dev)",
+	"homepage": "https://github.com/jsxtools/vite-utils/tree/main/packages/vite-plugin-11ty#readme",
+	"license": "MIT-0",
+	"type": "module",
+	"exports": {
+		".": "./dist/vite-plugin-eleventy.js"
+	},
+	"main": "./dist/vite-plugin-eleventy.js",
+	"types": "./dist/vite-plugin-eleventy.d.ts",
+	"files": ["dist"],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jsxtools/vite-utils.git",
+		"directory": "packages/vite-plugin-11ty"
+	},
+	"bugs": "https://github.com/jsxtools/vite-utils/issues",
+	"sideEffects": false,
+	"keywords": ["vite", "vite-plugin", "eleventy", "11ty", "ssg", "static-site-generator"],
+	"engines": {
+		"node": ">=22"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "tsc",
+		"test": "vitest run",
+		"test:watch": "vitest"
+	},
+	"peerDependencies": {
+		"@11ty/eleventy": "^3.0.0",
+		"vite": "^8.0.0"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^3.1.6",
+		"vite": "^8.1.3",
+		"vitest": "^4.1.9"
+	}
+}

@@ -1,0 +1,50 @@
+{
+	"name": "project.root",
+	"type": "module",
+	"private": true,
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"build": "npm run build --workspaces --if-present",
+		"clean": "rm -rf dist coverage *.tsbuildinfo",
+		"format": "dprint fmt",
+		"format:check": "dprint check",
+		"lint": "biome check",
+		"lint:fix": "biome check --write",
+		"postinstall": "dprint fmt",
+		"test": "npm test --workspaces --if-present",
+		"typecheck": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "latest",
+		"@types/node": "24.13.2",
+		"@vitest/browser-playwright": "^4.1.9",
+		"@vitest/coverage-istanbul": "4.1.9",
+		"@vitest/ui": "4.1.9",
+		"dprint": "latest",
+		"knip": "latest",
+		"playwright": "1.61.1",
+		"typescript": "^6.0.3",
+		"vitest": "4.1.9"
+	},
+	"knip": {
+		"workspaces": {
+			"packages/vite-plugin-11ty": {
+				"ignoreFiles": [
+					"test/fixtures/with-config/eleventy.config.js"
+				]
+			},
+			"packages/vite-plugin-polyfiller": {
+				"ignoreDependencies": [
+					"@jsxtools/explicit-resource-management",
+					"urlpattern-polyfill"
+				]
+			}
+		}
+	},
+	"allowScripts": {
+		"dprint": true,
+		"fsevents": true
+	}
+}
